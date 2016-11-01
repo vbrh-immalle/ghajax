@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>GH Ajax try</title>
+</head>
+<body>
+<button id="doit">Do it!</button>
+<div id="output></div>
+<script>
+var btn = document.getElementById("doit");
+var output = document.getElementById("output");
+
+btn.addEventListener("click", function() {
+  var req = new XMLHttpRequest();
+  req.addEventListener("load", function(e) {
+    console.log(e);
+    output.innerHTML = e.target.response;
+  });
+  req.open("GET", "http://thecatapi.com/api/images/get");
+  req.send();
+});
+</script>
+</body>
+</html>
