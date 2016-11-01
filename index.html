@@ -16,7 +16,8 @@ btn.addEventListener("click", function() {
     output.innerHTML = e.target.response;
   });
   req.addEventListener("error", function(e) {
-    console.log("error: " + e);
+    console.log("error:")
+    console.log(e);
   });
   req.open("GET", "https://146.185.157.181:9090/hello");
   req.send();
