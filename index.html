@@ -16,7 +16,11 @@ btn.addEventListener("click", function() {
     output.innerHTML = e.target.response;
   });
   req.open("GET", "https://146.185.157.181:9090/hello");
-  req.send();
+  try {
+    req.send();  
+  } catch(err) {
+    console("exception: " + err); 
+  }
 });
 </script>
 </body>
